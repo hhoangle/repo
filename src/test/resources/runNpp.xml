@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Npp">
+  <listeners>
+    <listener class-name="commons.MethodListener" />
+    <listener class-name="reportConfig.ReportNGListener" />
+    <listener class-name="reportConfig.ExtentTestListener" />
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+
+  <test name="Run On CHROME">
+	<parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="lhe.npp.Login"/>
+      <class name="lhe.npp.AddOrder"/>
+      <class name="lhe.npp.CreateCategory"/>
+      <class name="lhe.npp.ProductListAndViewDetailProduct"/>
+      <class name="lhe.npp.ViewAndEditPersonalInformation"/>
+      <class name="lhe.npp.ConfirmReceivedGoods"/>
+    </classes>
+  </test>
+
+</suite>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Admin">
+  <listeners>
+    <listener class-name="commons.MethodListener" />
+    <listener class-name="reportConfig.ReportNGListener" />
+    <listener class-name="reportConfig.ExtentTestListener" />
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+
+  <test name="Run On CHROME">
+	<parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="lhe.admin.Login"/>
+      <class name="lhe.admin.AddDistributorManagement"/>
+      <class name="lhe.admin.EditDistributorManagement"/>
+      <class name="lhe.admin.AddProduct"/>
+      <class name="lhe.admin.EditProduct"/>
+      <class name="lhe.admin.AddOrder"/>
+      <class name="lhe.admin.AddMarketingStaffForDistributor"/>
+      <class name="lhe.admin.UserManagementAddDistributor"/>
+      <class name="lhe.admin.UserManagementAddMarketingStaff"/>
+      <class name="lhe.admin.UserManagementAddAccountant"/>
+      <class name="lhe.admin.UserManagementAddWarehouse"/>
+      <class name="lhe.admin.UserManagementAddAdmin"/>
+    </classes>
+  </test>
+
+</suite>
