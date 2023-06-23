@@ -11,33 +11,33 @@
   <test name="Run On CHROME">
 	<parameter name="browser" value="chrome"/>
     <classes>
-      <class name="lhe.admin.Login"/>
-      <class name="lhe.admin.AddDistributorManagement"/>
-      <class name="lhe.admin.EditDistributorManagement"/>
-      <class name="lhe.admin.AddProduct"/>
-      <class name="lhe.admin.EditProduct"/>
-      <class name="lhe.admin.AddOrder"/>
-      <class name="lhe.admin.AddMarketingStaffForDistributor"/>
-      <class name="lhe.admin.UserManagementAddDistributor"/>
-      <class name="lhe.admin.UserManagementAddMarketingStaff"/>
-      <class name="lhe.admin.UserManagementAddAccountant"/>
-      <class name="lhe.admin.UserManagementAddWarehouse"/>
-      <class name="lhe.admin.UserManagementAddAdmin"/>
+      <class name="Mykiot.admin.Login"/>
+      <class name="Mykiot.admin.AddDistributorManagement"/>
+      <class name="Mykiot.admin.EditDistributorManagement"/>
+      <class name="Mykiot.admin.AddProduct"/>
+      <class name="Mykiot.admin.EditProduct"/>
+      <class name="Mykiot.admin.AddOrder"/>
+      <class name="Mykiot.admin.AddMarketingStaffForDistributor"/>
+      <class name="Mykiot.admin.UserManagementAddDistributor"/>
+      <class name="Mykiot.admin.UserManagementAddMarketingStaff"/>
+      <class name="Mykiot.admin.UserManagementAddAccountant"/>
+      <class name="Mykiot.admin.UserManagementAddWarehouse"/>
+      <class name="Mykiot.admin.UserManagementAddAdmin"/>
 
-      <class name="lhe.marketingStaff.Login"/>
-      <class name="lhe.marketingStaff.AddOrderFromDistributor"/>
-      <class name="lhe.marketingStaff.AddOrderForGroceries"/>
+      <class name="Mykiot.marketingStaff.Login"/>
+      <class name="Mykiot.marketingStaff.AddOrderFromDistributor"/>
+      <class name="Mykiot.marketingStaff.AddOrderForGroceries"/>
 
-      <class name="lhe.npp.Login"/>
-      <class name="lhe.npp.AddOrder"/>
-      <class name="lhe.npp.CreateCategory"/>
-      <class name="lhe.npp.ProductListAndViewDetailProduct"/>
-      <class name="lhe.npp.ViewAndEditPersonalInformation"/>
+      <class name="Mykiot.npp.Login"/>
+      <class name="Mykiot.npp.AddOrder"/>
+      <class name="Mykiot.npp.CreateCategory"/>
+      <class name="Mykiot.npp.ProductListAndViewDetailProduct"/>
+      <class name="Mykiot.npp.ViewAndEditPersonalInformation"/>
 
-      <class name="lhe.warehouse.WareHouseLogin"/>
-      <class name="lhe.warehouse.TransactionSlip"/>
+      <class name="Mykiot.warehouse.WareHouseLogin"/>
+      <class name="Mykiot.warehouse.TransactionSlip"/>
 
-      <class name="lhe.accountant.ViewOrderDetail"/>
+      <class name="Mykiot.accountant.ViewOrderDetail"/>
 
 
     </classes>

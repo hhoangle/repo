@@ -17,9 +17,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.apache.commons.lang3.RandomStringUtils;
-import pageObjects.admin.AdminHomePageObject;
-import pageObjects.admin.AdminLoginPageObject;
-import pageUIs.admin.AdminHomePageUI;
+
 
 import static commons.BasePageUI.*;
 import static commons.GlobalConstants.*;
@@ -27,14 +25,7 @@ import static org.apache.commons.lang.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertTrue;
 
 public class BasePage {
-    public AdminHomePageObject goToAdminHomePage(WebDriver driver) {
-        AdminLoginPageObject loginPage = new AdminLoginPageObject(driver);
-        AdminHomePageObject homePage;
-        homePage = loginPage.loginWebsite(ADMIN_ACCOUNT, ADMIN_PASSWORD);
-        homePage.clickButtonDragToTheLeft();
-        assertTrue(homePage.isProductTextDisplayed());
-        return new AdminHomePageObject(driver);
-    }
+
 
     public static BasePage getBasePageObject() {
         return new BasePage();
@@ -44,12 +35,7 @@ public class BasePage {
         driver.get(pageUrl);
     }
 
-    public AdminHomePageObject clickGoToAdminHomePageIcon(WebDriver driver) {
-        sleepInSecond(SHORT_TIMEOUT);
-        waitForElementClickable(driver, BasePageUI.HOME_PAGE_ICON);
-        clickToElement(driver, BasePageUI.HOME_PAGE_ICON);
-        return new AdminHomePageObject(driver);
-    }
+
 
     protected String getPageTitle(WebDriver driver) {
         return driver.getTitle();
@@ -222,7 +208,7 @@ public class BasePage {
         return select.isMultiple();
     }
 
-    public void selectItemInCustomDropdown(WebDriver driver, String parentLocator, String childLocator, String expectedTextItem) {
+    public void selectItemInCustomDropdown(WebDriver driver, String parentLocator, String childLocator) {
         sleepInSecond(2);
         this.getWebElement(driver, parentLocator).click();
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);

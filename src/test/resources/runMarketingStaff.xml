@@ -11,8 +11,8 @@
   <test name="Run On CHROME">
 	<parameter name="browser" value="chrome"/>
     <classes>
-      <class name="lhe.marketingStaff.Login"/>
-      <class name="lhe.marketingStaff.AddOrderFromDistributor"/>
+      <class name="Mykiot.marketingStaff.Login"/>
+      <class name="Mykiot.marketingStaff.AddOrderFromDistributor"/>
     </classes>
   </test>
 
