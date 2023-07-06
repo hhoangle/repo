@@ -1,0 +1,1 @@
+{"uuid":"d580c80f-5c13-4093-be0e-ac92b07b3f7a","name":"Mykiot.nptLogin","children":["2f5cfb41-d864-4495-85df-83f443fad4bd"],"befores":[{"name":"beforeClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1686297124201,"stop":1686297131568}],"afters":[],"links":[],"start":1686297124189,"stop":1686297138609}
