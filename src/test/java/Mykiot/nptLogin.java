@@ -40,7 +40,13 @@ public class nptLogin extends BaseTest {
     }
 
     @Test
-    public void TC_01_Login_Without_Input_Data(Method method) {
+    public void TC_01_Verify_UI_Before_Test(Method method) {
+        loginPage.verifySavePasswordButtonIsUnchecked();
+        loginPage.verifyLoginButtonIsDisabled();
+    }
+
+    @Test
+    public void TC_02_Login_Without_Input_Data(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login Empty Data");
         ExtentTestManager.getTest().log(Status.INFO, "Login - Step 01: Click Account Textbox");
         loginPage.clickToAccountTextbox();
@@ -59,7 +65,7 @@ public class nptLogin extends BaseTest {
     }
 
     @Test
-    public void TC_02_Login_With_Invalid_account(Method method) {
+    public void TC_03_Login_With_Invalid_account(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login with valid account");
         loginPage.loginWebsite(accountInvalid, passwordInvalid);
         assertEquals(loginPage.errorText(), "Sai số điện thoại hoặc mật khẩu");
@@ -69,7 +75,7 @@ public class nptLogin extends BaseTest {
     }
 
     @Test
-    public void TC_03_Login_With_Valid_Account(Method method) {
+    public void TC_04_Login_With_Valid_Account(Method method) {
         ExtentTestManager.startTest(method.getName(), "Login with valid account");
         loginPage.loginWebsite(account, password);
         assertEquals(loginPage.welcomeText(), "Xin chào,");

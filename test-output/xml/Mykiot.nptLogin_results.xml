@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Run On CHROME"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="13.755">
+  <properties />
+  
+  
+            <testcase name="TC_03_Login_With_Valid_Account" time="6.835" classname="Mykiot.nptLogin" />
+                <testcase name="TC_01_Login_Without_Input_Data" time="0.366" classname="Mykiot.nptLogin" />
+                <testcase name="TC_02_Login_With_Invalid_account" time="6.554" classname="Mykiot.nptLogin" />
+      
+</testsuite>

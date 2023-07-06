@@ -53,39 +53,39 @@ public class NptProductPageObject extends BasePage {
     public void selectBrand() {
         waitForElementVisible(driver, SELECT_BRAND_DROPDOWN_LIST_PARENT);
         sendKeyToElement(driver, SELECT_BRAND_DROPDOWN_LIST_PARENT, "Unilever");
-        clickToElement(driver,BRAND_NAME);
+        clickToElement(driver, BRAND_NAME);
     }
 
     public void selectProductCategory() {
         sleepInSecond(SHORT_TIMEOUT);
         waitForElementVisible(driver, SELECT_PRODUCT_CATEGORY_LIST_PARENT);
-        clickToElement(driver,SELECT_PRODUCT_CATEGORY_LIST_PARENT);
+        clickToElement(driver, SELECT_PRODUCT_CATEGORY_LIST_PARENT);
         clickToElement(driver, PRODUCT_CATEGORY_NAME);
     }
 
     public void selectProductGroup() {
-        waitForElementVisible(driver,SELECT_PRODUCT_GROUP_LIST_PARENT);
-        sendKeyToElement(driver,SELECT_PRODUCT_GROUP_LIST_PARENT,"Mỹ phẩm cao cấp");
-        clickToElement(driver,PRODUCT_GROUP_NAME);
+        waitForElementVisible(driver, SELECT_PRODUCT_GROUP_LIST_PARENT);
+        sendKeyToElement(driver, SELECT_PRODUCT_GROUP_LIST_PARENT, "Mỹ phẩm cao cấp");
+        clickToElement(driver, PRODUCT_GROUP_NAME);
     }
 
     public void clickStatusButton() {
-        waitForElementVisible(driver,ENABLE_STATUS_BUTTON);
+        waitForElementVisible(driver, ENABLE_STATUS_BUTTON);
         clickToElement(driver, ENABLE_STATUS_BUTTON);
     }
 
     public void clickSellOnlineButton() {
         waitForElementVisible(driver, SELL_ONLINE_BUTTON);
-        clickToElement(driver,SELL_ONLINE_BUTTON);
+        clickToElement(driver, SELL_ONLINE_BUTTON);
     }
 
     public void insertProductDescription() {
-        waitForElementVisible(driver,PRODUCT_DESCRIPTION_FIELD);
-        sendKeyToElement(driver,NptProductPageUI.PRODUCT_DESCRIPTION_FIELD,"Tươi ngon mát lạnh");
+        waitForElementVisible(driver, PRODUCT_DESCRIPTION_FIELD);
+        sendKeyToElement(driver, NptProductPageUI.PRODUCT_DESCRIPTION_FIELD, "Tươi ngon mát lạnh");
     }
 
     public void clickSaveButton() {
-        waitForElementClickable(driver,SAVE_BUTTON);
+        waitForElementClickable(driver, SAVE_BUTTON);
         clickToElement(driver, SAVE_BUTTON);
     }
 

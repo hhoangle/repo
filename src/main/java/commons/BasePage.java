@@ -352,6 +352,10 @@ public class BasePage {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }
+    public void scrollToTopPage(WebDriver driver) {
+        JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+        jsExecutor.executeScript("window.scrollTo(0, 0)");
+    }
 
     public void highlightElement(WebDriver driver, String locatorType) {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
@@ -593,7 +597,7 @@ public class BasePage {
         return getElementAttribute(driver, DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
     }
 
-    public void sleepInSecond(int second) {
+    public static void sleepInSecond(int second) {
         try {
             Thread.sleep(second * 1000);
         } catch (InterruptedException e) {

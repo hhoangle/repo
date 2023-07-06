@@ -1,0 +1,1 @@
+{"uuid":"3246590e-e25a-4d6b-a326-da2d78d7e499","name":"Npp","children":["64256736-2eea-4029-9531-fd29649b3c3c"],"befores":[{"name":"initBeforeSuite","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1688365075797,"stop":1688365075803}],"afters":[],"links":[],"start":1688365075785,"stop":1688365098006}
