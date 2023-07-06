@@ -1,9 +1,13 @@
 package AdminPageObjects;
+import NPT.NptPageObjects.NptPageUIs.NptLoginUI;
 import commons.BasePage;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import AdminPageObjects.*;
 import AdminPageUIs.*;
+import org.openqa.selenium.WebElement;
+
 public class AdminLoginPageObject extends BasePage{
     private WebDriver driver;
     public AdminLoginPageObject(WebDriver driver){
@@ -65,5 +69,16 @@ public class AdminLoginPageObject extends BasePage{
     public void clickToClosePopup() {
         waitForElementVisible(driver,AdminLoginUI.WRONG_ACCOUNT_POPUP);
         clickToElement(driver,AdminLoginUI.WRONG_ACCOUNT_POPUP);
+    }
+    public void verifySavePasswordButtonIsUnchecked() {
+        waitForElementVisible(driver, NptLoginUI.SAVE_PASSWORD_CHECKBOX);
+        WebElement savePasswordCheckbox = driver.findElement(By.xpath("//input[@type='checkbox']"));
+        assert !savePasswordCheckbox.isSelected();
+    }
+
+    public void verifyLoginButtonIsDisabled() {
+        waitForElementVisible(driver,NptLoginUI.LOGIN_BUTTON);
+        WebElement loginButton = driver.findElement(By.xpath("//button[@type='button']"));
+        assert !loginButton.isEnabled();
     }
 }

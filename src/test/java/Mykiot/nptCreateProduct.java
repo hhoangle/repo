@@ -25,7 +25,6 @@ public class nptCreateProduct extends BaseTest {
         driver = getBrowserDriver(browserName, NPT_LOGIN);
         loginPage = new NptLoginPageObject(driver);
         nptHomePage = loginPage.goToNptHomePage(driver);
-
         imagePath = PROJECT_PATH + "\\uploadFiles\\NewProductImage.png";
 
     }
