@@ -99,8 +99,8 @@ public class adminCreateProduct extends BaseTest {
         assertEquals(adminProductDetailPageObject.getBrandName(), brandName);
     }
 
-//    @AfterClass
-//    public void afterClass() {
-//        closeBrowserAndDriver();
-//    }
+    @AfterClass
+    public void afterClass() {
+        closeBrowserAndDriver();
+    }
 }
