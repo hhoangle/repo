@@ -19,6 +19,9 @@ public class nptCreateProduct extends BaseTest {
     private NptHomePageObject nptHomePage;
     private NptProductPageObject nptProductPage;
 
+
+
+
     @BeforeClass
     public void beforeClass() {
         browserName = "chrome";
