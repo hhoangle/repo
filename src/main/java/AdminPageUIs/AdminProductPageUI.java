@@ -8,7 +8,7 @@ public class AdminProductPageUI {
     public static final String CLOSE_POPUP_BUTTON = "//p[contains(text(),'Đóng')]";
     public static final String PRODUCT_NAME_FIELD = "//input[@placeholder='Nhập tên sản phẩm']";
     public static final String BARCODE_FIELD = "//input[@placeholder='Nhập mã vạch']";
-    public static final String PRODUCT_IMAGE ="//div[@class='bg-white rounded-lg p-5 mb-4']//input[@type='file']";
+    public static final String PRODUCT_IMAGE = "//div[@class='bg-white rounded-lg p-5 mb-4']//input[@type='file']";
     public static final String SELLING_PRICE_FIELD = "//input[@placeholder='Nhập giá bán']";
     public static final String IMPORT_PRICE_FIELD = "//input[@placeholder='Nhập giá nhập']";
     public static final String QUANTITY_FIELD = "//input[@placeholder='Nhập tồn']";
@@ -21,4 +21,5 @@ public class AdminProductPageUI {
     public static final String BRAND_NAME = "//p[text()='Thương hiệu']/following-sibling::div[1]//li[@id='null-0']";
     public static final String ADD_INFO_TEXT = "//div[contains(text(),'Thông tin thêm')]";
     public static final String BRAND_NAME_TEXT = "//p[text()='Thương hiệu']/following-sibling::div/div[2]//span";
+
 }
