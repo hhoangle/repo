@@ -1,0 +1,1 @@
+{"uuid":"ac6982dd-ed37-4bd9-8419-66c7c36395c6","name":"Mykiot.adminCreateProduct","children":["3c5acbe4-80f6-4dbe-a24f-e18f5722fe42"],"befores":[{"name":"beforeClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1688958526400,"stop":1688958552704}],"afters":[],"links":[],"start":1688958526397,"stop":1688958579593}
