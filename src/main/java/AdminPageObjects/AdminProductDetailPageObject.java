@@ -24,4 +24,34 @@ public class AdminProductDetailPageObject extends BasePage {
         waitForElementVisible(driver, AdminProductPageUI.BRAND_NAME_TEXT_IN_DETAIL_PAGE);
         return getElementText(driver, AdminProductPageUI.BRAND_NAME_TEXT_IN_DETAIL_PAGE);
     }
+
+    public String getProductCategoryName() {
+        waitForElementVisible(driver, AdminProductPageUI.PRODUCT_CATEGORY_NAME_TEXT_IN_DETAIL_PAGE);
+        return getElementText(driver, AdminProductPageUI.PRODUCT_CATEGORY_NAME_TEXT_IN_DETAIL_PAGE);
+    }
+
+    public String getProductGroupName() {
+        waitForElementVisible(driver, AdminProductPageUI.PRODUCT_GROUP_NAME_TEXT_IN_DETAIL_PAGE);
+        return getElementText(driver, AdminProductPageUI.PRODUCT_GROUP_NAME_TEXT_IN_DETAIL_PAGE);
+    }
+
+    public String getProductBarcode() {
+        waitForElementVisible(driver, AdminProductPageUI.PRODUCT_BAR_CODE_TEXT_IN_DETAIL_PAGE);
+        return getElementText(driver, AdminProductPageUI.PRODUCT_BAR_CODE_TEXT_IN_DETAIL_PAGE);
+    }
+
+    public String getProductDescription() {
+        waitForElementVisible(driver, AdminProductPageUI.PRODUCT_DESCRIPTION_TEXT_IN_DETAIL_PAGE);
+        return getElementText(driver, AdminProductPageUI.PRODUCT_DESCRIPTION_TEXT_IN_DETAIL_PAGE);
+    }
+
+    public String getVariantName() {
+        waitForElementVisible(driver, AdminProductPageUI.VARIANT_NAME_TEXT_IN_DETAIL_PAGE);
+        return getElementText(driver, AdminProductPageUI.VARIANT_NAME_TEXT_IN_DETAIL_PAGE);
+    }
+
+    public String getVariantValue() {
+        waitForElementVisible(driver, AdminProductPageUI.VARIANT_VALUE_TEXT_IN_DETAIL_PAGE);
+        return getElementText(driver, AdminProductPageUI.VARIANT_VALUE_TEXT_IN_DETAIL_PAGE);
+    }
 }
