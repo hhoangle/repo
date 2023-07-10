@@ -174,9 +174,9 @@ public class adminCreateProduct extends BaseTest {
         assertEquals(adminProductDetailPageObject.getVariantValue(), variantValue);
     }
 
-//    @AfterClass
-//    public void afterClass() {
-//        closeBrowserAndDriver();
-//    }
+    @AfterClass
+    public void afterClass() {
+        closeBrowserAndDriver();
+    }
 }
 
