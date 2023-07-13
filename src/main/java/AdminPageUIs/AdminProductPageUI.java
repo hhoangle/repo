@@ -41,6 +41,9 @@ public class AdminProductPageUI {
     public static final String VARIANT_NAME_TEXT_IN_DETAIL_PAGE = "//div[@class='mb-4']/p";
     public static final String VARIANT_VALUE_TEXT_IN_DETAIL_PAGE = "//div[@class='flex flex-wrap gap-2']/p";
     public static final String PRODUCT_STATUS_TOGGLE_BUTTON = "//p[text()='Trạng thái']/parent::div/div[1]/div[1]/label";
-    public static final String PRODUCT_STATUS = "//div[@class='flex items-center justify-between pb-4 border-b border-gray-light']/p";
-    public static final String SELL_ONLINE_STATUS = "//div[@class='flex items-center justify-between pt-4']/p";
+    public static final String PRODUCT_STATUS = "//div[@class='flex items-center gap-2']/p";
+    public static final String SELL_ONLINE_STATUS = "//div[@class='flex items-center justify-between pt-4']/div/p";
+    public static final String SELL_ONLINE_STATUS_AFTER_SWITCH_OFF = "//div[@class='flex items-center justify-between pt-4']/div/p";
+    public static final String PRODUCT_STATUS_AFTER_SWITCH_OFF = "//div[@class='flex items-center gap-2']/p";
+    public static final String SELL_ONLINE_STATUS_TOGGLE_BUTTON = "//p[text()='Bán online']/parent::div/div[1]/div[1]/label";
 }

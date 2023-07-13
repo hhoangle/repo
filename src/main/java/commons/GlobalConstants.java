@@ -7,7 +7,7 @@ public class GlobalConstants {
     public static final String NPT_LOGIN = "https://npttest.onkiot.com/";
     public static String ADMIN_ACCOUNT = "adminqc";
     public static String ADMIN_PASSWORD = "admin@11";
-    public static String NPT_ACCOUNT = "098452645538";
+    public static String NPT_ACCOUNT = "0984526455";
     public static String NPT_PASSWORD = "123456789";
     public static final String PROJECT_PATH = System.getProperty("user.dir");
     public static final String JAVA_VERSION = System.getProperty("java.version");
