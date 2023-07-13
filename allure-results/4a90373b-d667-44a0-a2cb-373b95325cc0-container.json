@@ -1,0 +1,1 @@
+{"uuid":"4a90373b-d667-44a0-a2cb-373b95325cc0","name":"Mykiot.nptCreateProduct","children":["e3b63110-04f2-41a4-b9b8-53a5f4f75263"],"befores":[{"name":"beforeClass","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1689061245858,"stop":1689061277539}],"afters":[],"links":[],"start":1689061245854,"stop":1689061303815}

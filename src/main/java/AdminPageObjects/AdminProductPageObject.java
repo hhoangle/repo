@@ -19,7 +19,7 @@ public class AdminProductPageObject extends BasePage {
     }
 
     public AdminProductDetailPageObject clickSaveButton() {
-        sleepInSecond(2);
+        sleepInSecond(1);
         scrollToTopPage(driver);
         waitForElementVisible(driver, AdminProductPageUI.SAVE_PRODUCT);
         clickToElement(driver, AdminProductPageUI.SAVE_PRODUCT);
@@ -145,7 +145,7 @@ public class AdminProductPageObject extends BasePage {
         sendKeyToElement(driver, AdminProductPageUI.VARIANT_QUANTITY_FIELD, variantQuantity);
     }
 
-    public void checkSwitchProductStatus() {
+    public void clickProductStatusToggleButton() {
         clickToElement(driver, AdminProductPageUI.PRODUCT_STATUS_TOGGLE_BUTTON);
     }
     public String getProductStatus() {
@@ -158,4 +158,17 @@ public class AdminProductPageObject extends BasePage {
         return getElementText(driver, AdminProductPageUI.SELL_ONLINE_STATUS);
     }
 
+    public String getSellOnlineStatusAfterSwitchOff() {
+        waitForElementVisible(driver, AdminProductPageUI.SELL_ONLINE_STATUS_AFTER_SWITCH_OFF);
+        return getElementText(driver, AdminProductPageUI.SELL_ONLINE_STATUS_AFTER_SWITCH_OFF);
+    }
+
+    public String getProductStatusAfterSwitchOff() {
+        waitForElementVisible(driver, AdminProductPageUI.PRODUCT_STATUS_AFTER_SWITCH_OFF);
+        return getElementText(driver, AdminProductPageUI.PRODUCT_STATUS_AFTER_SWITCH_OFF);
+    }
+
+    public void checkSellOnlineStatusToggleButton() {
+        clickToElement(driver, AdminProductPageUI.SELL_ONLINE_STATUS_TOGGLE_BUTTON);
+    }
 }

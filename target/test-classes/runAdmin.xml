@@ -11,18 +11,8 @@
   <test name="Run On CHROME">
 	<parameter name="browser" value="chrome"/>
     <classes>
-      <class name="Mykiot.admin.Login"/>
-      <class name="Mykiot.admin.AddDistributorManagement"/>
-      <class name="Mykiot.admin.EditDistributorManagement"/>
-      <class name="Mykiot.admin.AddProduct"/>
-      <class name="Mykiot.admin.EditProduct"/>
-      <class name="Mykiot.admin.AddOrder"/>
-      <class name="Mykiot.admin.AddMarketingStaffForDistributor"/>
-      <class name="Mykiot.admin.UserManagementAddDistributor"/>
-      <class name="Mykiot.admin.UserManagementAddMarketingStaff"/>
-      <class name="Mykiot.admin.UserManagementAddAccountant"/>
-      <class name="Mykiot.admin.UserManagementAddWarehouse"/>
-      <class name="Mykiot.admin.UserManagementAddAdmin"/>
+      <class name="Mykiot.adminCreateProduct"/>
+
     </classes>
   </test>
 

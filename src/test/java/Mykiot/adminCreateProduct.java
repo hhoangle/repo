@@ -24,15 +24,18 @@ public class adminCreateProduct extends BaseTest {
     private AdminHomePageObject adminHomePage;
     private AdminProductPageObject adminProductPage;
     private AdminProductDetailPageObject adminProductDetailPageObject;
-    private String account, password, brandName, productCategoryName, productGroupName, productName, sellingPrice, importPrice, productDescription, quantityProduct, variantValue, variantName, variantQuantity,strProductBarcode,strVariantBarcode,productStatus,sellOnlineStatus;
+    private String account, password, brandName, productCategoryName,
+            productGroupName, productName, sellingPrice, importPrice, productDescription,
+            quantityProduct, variantValue, variantName, variantQuantity,strProductBarcode,
+            strVariantBarcode,productStatus,sellOnlineStatus,sellOnlineStatusAfterSwitchOff,
+            productStatusAfterSwitchOff;
     private long randomProductBarcode, randomVariantBarcode, min, max;
-
     @BeforeClass
     public void beforeClass() {
         account = "0856174003";
         password = "01";
         browserName = "chrome";
-        productName = "apple juice";
+        productName = "Lemon Juice";
         sellingPrice = "15000";
         importPrice = "10000";
         quantityProduct = "1000";
@@ -40,7 +43,9 @@ public class adminCreateProduct extends BaseTest {
         variantValue = "black";
         variantQuantity = "1000";
         productStatus = "Đang bán";
+        productStatusAfterSwitchOff = "Không đang bán";
         sellOnlineStatus = "Đang bán";
+        sellOnlineStatusAfterSwitchOff = "Không đang bán";
         //CREATE RANDOM BARCODE
         Random random = new Random();
         min = 1000000000000L; // Minimum 13-digit number
@@ -56,23 +61,28 @@ public class adminCreateProduct extends BaseTest {
         loginPage = new AdminLoginPageObject(driver);
         adminHomePage = loginPage.loginWebsite(account, password);
     }
-
     public void goToHomePage() {
         adminHomePage.openPageUrl(driver, ADMIN_LOGIN);
 
     }
-
     @Test
     public void TC_01_Create_Product_Without_Input() {
         goToHomePage();
         adminProductPage = adminHomePage.clickToManageProduct();
         adminProductPage.waitForLoadingIconInvisible(driver);
         adminProductPage.clickToCreateProductButton();
+        assertEquals(adminProductPage.getProductStatus(), productStatus);
+        assertEquals(adminProductPage.getSellOnlineStatus(), sellOnlineStatus);
+        adminProductPage.checkSellOnlineStatusToggleButton();
+        assertEquals(adminProductPage.getSellOnlineStatusAfterSwitchOff(),sellOnlineStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        assertEquals(adminProductPage.getProductStatusAfterSwitchOff(),productStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        adminProductPage.checkSellOnlineStatusToggleButton();
         adminProductPage.clickSaveButton();
         assertTrue(adminProductPage.checkWarningMessageIsDisplayed());
         adminProductPage.cliclCloseWarningPopup();
     }
-
     @Test
     public void TC_02_Create_Product_Input_Only_Product_Name() {
         goToHomePage();
@@ -80,19 +90,34 @@ public class adminCreateProduct extends BaseTest {
         adminProductPage.waitForLoadingIconInvisible(driver);
         adminProductPage.clickToCreateProductButton();
         adminProductPage.insertProductName(productName);
+        //DEFAULT PRODUCT STATUS & SELLING ONLINE SHOULD BE "ON"
         assertEquals(adminProductPage.getProductStatus(), productStatus);
         assertEquals(adminProductPage.getSellOnlineStatus(), sellOnlineStatus);
-        adminProductPage.checkSwitchProductStatus();
-//        adminProductDetailPageObject = adminProductPage.clickSaveButton();
-//        assertEquals(adminProductDetailPageObject.getProductName(), productName);
+        adminProductPage.checkSellOnlineStatusToggleButton();
+        assertEquals(adminProductPage.getSellOnlineStatusAfterSwitchOff(),sellOnlineStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        assertEquals(adminProductPage.getProductStatusAfterSwitchOff(),productStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        adminProductPage.checkSellOnlineStatusToggleButton();
+        adminProductDetailPageObject = adminProductPage.clickSaveButton();
+        assertEquals(adminProductDetailPageObject.getProductName(), productName);
     }
-
     @Test
     public void TC_03_Create_Product_Without_Variant() {
         goToHomePage();
         adminProductPage = adminHomePage.clickToManageProduct();
         adminProductPage.waitForLoadingIconInvisible(driver);
         adminProductPage.clickToCreateProductButton();
+        //CHECK PRODUCT STATUS
+        assertEquals(adminProductPage.getProductStatus(), productStatus);
+        assertEquals(adminProductPage.getSellOnlineStatus(), sellOnlineStatus);
+        adminProductPage.checkSellOnlineStatusToggleButton();
+        assertEquals(adminProductPage.getSellOnlineStatusAfterSwitchOff(),sellOnlineStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        assertEquals(adminProductPage.getProductStatusAfterSwitchOff(),productStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        adminProductPage.checkSellOnlineStatusToggleButton();
+        //INSERT PRODUCT INFORMATION
         adminProductPage.insertBarCode(randomProductBarcode);
         adminProductPage.insertProductName(productName);
         adminProductPage.insertSellingPrice(sellingPrice);
@@ -125,17 +150,26 @@ public class adminCreateProduct extends BaseTest {
         assertEquals(adminProductDetailPageObject.getProductBarcode(), strProductBarcode);
         assertEquals(adminProductDetailPageObject.getProductDescription(), productDescription);
     }
-
     @Test
     public void TC_04_Create_Product_With_Variant() {
         goToHomePage();
         adminProductPage = adminHomePage.clickToManageProduct();
         adminProductPage.waitForLoadingIconInvisible(driver);
         adminProductPage.clickToCreateProductButton();
+        //INSERT PRODUCT INFORMATION
         adminProductPage.insertBarCode(randomProductBarcode);
         adminProductPage.insertProductName(productName);
         adminProductPage.insertSellingPrice(sellingPrice);
         adminProductPage.insertImportPrice(importPrice);
+        //CHECK PRODUCT STATUS
+        assertEquals(adminProductPage.getProductStatus(), productStatus);
+        assertEquals(adminProductPage.getSellOnlineStatus(), sellOnlineStatus);
+        adminProductPage.checkSellOnlineStatusToggleButton();
+        assertEquals(adminProductPage.getSellOnlineStatusAfterSwitchOff(),sellOnlineStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        assertEquals(adminProductPage.getProductStatusAfterSwitchOff(),productStatusAfterSwitchOff);
+        adminProductPage.clickProductStatusToggleButton();
+        adminProductPage.checkSellOnlineStatusToggleButton();
         //CLICK ADD PROPERTIES
         adminProductPage.clickAddProperties();
         adminProductPage.insertVariantName(variantName);
@@ -173,10 +207,9 @@ public class adminCreateProduct extends BaseTest {
         assertEquals(adminProductDetailPageObject.getVariantName(), variantName);
         assertEquals(adminProductDetailPageObject.getVariantValue(), variantValue);
     }
-
-    @AfterClass
-    public void afterClass() {
-        closeBrowserAndDriver();
-    }
+//    @AfterClass
+//    public void afterClass() {
+//        closeBrowserAndDriver();
+//    }
 }
 

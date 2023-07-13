@@ -20,7 +20,6 @@ import org.apache.commons.lang3.RandomStringUtils;
 
 
 import static commons.BasePageUI.*;
-import static commons.GlobalConstants.*;
 import static org.apache.commons.lang.RandomStringUtils.randomNumeric;
 import static org.testng.Assert.assertTrue;
 
@@ -399,6 +398,12 @@ public class BasePage {
         JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
         jsExecutor.executeScript("arguments[0].removeAttribute('" + attributeRemove + "');", this.getWebElement(driver, locator));
     }
+    public String getTextByJs(WebDriver driver, String locatorType){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        WebElement element = driver.findElement(By.xpath(locatorType));
+        String contents = (String) js.executeScript("return arguments[0].innerHTML;", element);
+        return contents;
+    }
 
     public boolean areJQueryAndJSLoadedSuccess(WebDriver driver) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
@@ -504,11 +509,6 @@ public class BasePage {
     public void waitForLoadingIconInvisible(WebDriver driver) {
         WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
         explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(LOADING_ICON)));
-    }
-
-    public void waitForLoadingItemInvisible(WebDriver driver) {
-        WebDriverWait explicitWait = new WebDriverWait(driver, longTimeout);
-        explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(LOADING_ITEM)));
     }
 
     /**
